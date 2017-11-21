@@ -5,15 +5,31 @@
     -webkit-box-sizing: border-box;
 }
 
+/*LETTERTYPE & ACHTERGROND KLEUR*/
 body {
     background-color: teal;
     font-family: 'Raleway', sans-serif;
 }
 
+/*OPMAAK WRAPPER/VAK 1*/
+.wrapper0 {
+    max-width: 1200px;
+    margin-left: 650px;
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    border-radius: 30px;
+    padding: 1%;
+    background-color: darkseagreen;
+    box-shadow: 0px 5px 0px 0px lightseagreen;
+    height: 350px;
+}
+
+/*OPMAAK WRAPPER/VAK 1*/
 .wrapper {
     max-width: 1200px;
     margin-left: 650px;
-    margin-top: 300px;
+    margin-top: 40px;
     width: 100%;
     text-align: center;
     border-radius: 30px;
@@ -24,12 +40,13 @@ body {
 }
 
 h1 {
-    color: #ecf0f1;
+    font-size: 50px;
+    color: darkslategray;
 }
 
 h1 + p {
     margin-bottom: 5%;
-    color: #3498db;
+    color: white;
 }
 
 .scoreWrap {float: left;}
@@ -42,7 +59,7 @@ h1 + p {
 }
 
 .bg {
-    background-color: #04AF71;
+    background-color: teal;
 }
 
 button {

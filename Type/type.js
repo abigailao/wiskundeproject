@@ -7,7 +7,7 @@ var points = 0;
 var spans;
 var typed;
 var seconds = 60;
-var spark = new Audio("http://k003.kiwi6.com/hotlink/qdpr7bioht/spark.mp3");
+// var spark = new Audio("http://k003.kiwi6.com/hotlink/qdpr7bioht/spark.mp3");
 
 function countdown() {
     points = 0;
@@ -30,9 +30,10 @@ function countdown() {
 
 function random() {
     words.innerHTML = "";
-    var random = Math.floor(Math.random() * (96 - 0 + 1)) + 0;
+    // var random = Math.floor(Math.random() * (96 - 0 + 1)) + 0;
+    var random = Math.floor(Math.random() * (100 + 1));
     var wordArray = list[random].split("");
-    for (var i = 0; i < wordArray.length; i++) { //building the words with spans around the letters
+    for (var i = 0; i < wordArray.length; i++) { //woorden bouwen met spans om de letters heen
         var span = document.createElement("span");
         span.classList.add("span");
         span.innerHTML = wordArray[i];
@@ -44,14 +45,14 @@ function random() {
 
 const list = ['ABELS','ABSCIS','AFBEELDING','AFGELEIDE','APOTHEMA','AS','ASSENSTELSEL','ASYMMETRIE','BIJECTIE',
     'BILINEAIR','BISSECTRICE','BREKINGSINDEX','COEFFICIENT','COLLINEAIR','COSECANS','COSINUS','COTANGENS','CURVE',
-    'DALPARABOOL','DELER','DIFFERENTIAAL','DIMENSIE','DOORSNEDE','DRIEHOEK','EENTERM','ELLIPSOIDE','EXPONENT','FACTOR',
-    'FILTER','FORMULE','FUNCTIE','GEMIDDELDE','GETAL','GRAAD','GRAAF','GROEP','HASSEDIAGRAM','HOEK','HOEKPUNT',
-    'HOMOMORFISME','HOOGTELIJN','HULPSTELLING','HYPOTENUSA','DEMPOTENTIE','INFIMUM','INJECTIE','INTEGRAAL','KEGEL',
-    'KEGELAS','KEGELVLAK','KOORDE','KROMME','KUBUS','KWADRAAT','LIJN','LIJNSTUK','LOG','LOGARITME','LOODLIJN','MACHT',
-    'MANTISSE','MATRIX','NEVENHOEK','NORMAAL','OPVOLGER','PARABOOL','POLYEDER','POLYNOOM','PRIEMGETAL','PRISMOIDE',
-    'PRONIKGETAL','QUOTIENT','RAAKLIJN','RADIX','RECHTE','REPETENT','RESTGETAL','RESULTANTE','RING','SECANS','SIN',
-    'SINUS','SNIJPUNT','STOCHAST','STRAAL','SUPREMUM','TANGENS','TENSOR','TROOP','VECTOR','VEELHOEK','VEELTERM',
-    'VERGELIJKING','VERZAMELING','WORTEL','ZIJDE'];
+    'DALPARABOOL','DELER','DIFFERENTIAAL','DIMENSIE','DOORSNEDE','DRIEHOEK','EENTERM','ELLIPSOIDE','EVENWIJDIG',
+    'EXPONENT','FACTOR','FILTER','FORMULE','FUNCTIE','GEMIDDELDE','GETAL','GRAAD','GRAAF','GROEP','HASSEDIAGRAM',
+    'HOEK','HOEKPUNT','HOMOMORFISME','HOOGTELIJN','HULPSTELLING','HYPOTENUSA','DEMPOTENTIE','INFIMUM','INJECTIE',
+    'INTEGRAAL','KEGEL','KEGELAS','KEGELVLAK','KOORDE','KROMME','KUBUS','KWADRAAT','LIJN','LIJNSTUK','LOG','LOGARITME',
+    'LOODLIJN','MACHT', 'MANTISSE','MATRIX','NEVENHOEK','NORMAAL','OPVOLGER','PARABOOL','POLYEDER','POLYNOOM',
+    'PRIEMGETAL','PRISMOIDE','PRONIKGETAL','QUOTIENT','RAAKLIJN','RADIX','RECHTE','REPETENT','RESTGETAL','RESULTANTE',
+    'RING','SECANS','SIN','SINUS','SNIJPUNT','STOCHAST','STRAAL','SUPREMUM','TANGENS','TELLER','TENSOR','TRANSLATIE',
+    'TROOP','VECTOR','VEELHOEK','VEELTERM','VERGELIJKING','VERZAMELING','WORTEL','ZIJDE','ZWAARTELIJN'];
 
 button.addEventListener("click", function(e){
     countdown();
@@ -65,7 +66,7 @@ function typing(e) {
     for (var i = 0; i < spans.length; i++) {
         if (spans[i].innerHTML === typed) { // if typed letter is the one from the word
             if (spans[i].classList.contains("bg")) { // if it already has class with the bacground color then check the next one
-                continue;
+                // continue;
             } else if (spans[i].classList.contains("bg") === false && spans[i-1] === undefined || spans[i-1].classList.contains("bg") !== false ) { // if it dont have class, if it is not first letter or if the letter before it dont have class (this is done to avoid marking the letters who are not in order for being checked, for example if you have two "A"s so to avoid marking both of them if the first one is at the index 0 and second at index 5 for example)
                 spans[i].classList.add("bg");
                 break;
@@ -78,13 +79,13 @@ function typing(e) {
             checker++;
         }
         if (checker === spans.length) { // if so, animate the words with animate.css class
-            spark.pause();
-            spark.currentTime = 0;
-            spark.play();
+            // spark.pause();
+            // spark.currentTime = 0;
+            // spark.play();
             words.classList.add("animated");
             words.classList.add("fadeOut");
-            points++; // increment the points
-            scoreDiv.innerHTML = points; //add points to the points div
+            points++; //verhoogt de punten
+            scoreDiv.innerHTML = points; //voegt punten aan de punten div toe
             document.removeEventListener("keydown", typing, false);
             setTimeout(function(){
                 words.className = "words"; // restart the classes
