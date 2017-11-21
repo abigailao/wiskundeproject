@@ -5,6 +5,29 @@
     -webkit-box-sizing: border-box;
 }
 
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;}
+
 /*LETTERTYPE & ACHTERGROND KLEUR*/
 body {
     background-color: teal;
@@ -14,7 +37,8 @@ body {
 /*OPMAAK WRAPPER/VAK 1*/
 .wrapper0 {
     max-width: 1200px;
-    margin-left: 650px;
+    display: block;
+    margin: auto;
     margin-top: 70px;
     width: 100%;
     text-align: center;
@@ -28,7 +52,8 @@ body {
 /*OPMAAK WRAPPER/VAK 1*/
 .wrapper {
     max-width: 1200px;
-    margin-left: 650px;
+    display: block;
+    margin: auto;
     margin-top: 40px;
     width: 100%;
     text-align: center;
